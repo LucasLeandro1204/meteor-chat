@@ -1,0 +1,25 @@
+<template name="Create">
+  <main class="flex justify-center align-center">
+    <form class="md:max-w-xs">
+      <h1 class="text-center text-2xl md:text-3xl">Now it’s easier to have a chat meeting</h1>
+
+      <p class="mt-8">
+        <label>
+          <span class="font-bold text-xs text-grey-darker">Your name</span>
+          <input class="block mt-2 px-4 py-3 border-2 w-full text-sm rounded border-grey-light focus:border-purple" placeholder="Anonymous" type="text" name="username" required>
+        </label>
+      </p>
+
+      <p class="mt-4">
+        <label>
+          <span class="font-bold text-xs text-grey-darker">The chatroom title</span>
+          <input class="block mt-2 px-4 py-3 border-2 w-full text-sm rounded border-grey-light focus:border-purple" placeholder="Work reunion or something like that" type="text" name="title" required>
+        </label>
+      </p>
+
+      <p class="mt-4">
+        <button class="rounded border border-purple text-white bg-purple px-4 py-3 w-full text-sm font-bold" type="submit">Join this meeting</button>
+      </p>
+    </form>
+  </main>
+</template>

@@ -1,11 +1,11 @@
 import '../../ui/layouts/app';
-import '../../ui/pages/home';
+import '../../ui/pages/create';
 
 FlowRouter.route('/', {
-  name: 'home',
+  name: 'index',
   action () {
     BlazeLayout.render('App', {
-      main: 'Home',
+      main: 'Create',
     });
   },
 });

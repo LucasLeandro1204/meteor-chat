@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.startup(() => {
-  // code to run on server at startup
+Meteor.methods({
+  // test (...args) {
+  //   console.log(args, this.connection.id);
+  // },
 });
