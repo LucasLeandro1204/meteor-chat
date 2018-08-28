@@ -1,7 +1,9 @@
-<body class="font-sans bg-grey-lighter p-4 md:p-8"></body>
+<body class="font-sans text-black bg-grey-lighter px-4 pt-4 md:px-8 md:pt-4 h-screen flex flex-col"></body>
 
 <template name="App">
-  <h1 class="text-indigo mb-8">MMeeting</h1>
+  <header>
+    <h1 class="text-indigo mb-8">MMeeting</h1>
+  </header>
   
   {{> Template.dynamic template=main}}
 </template>

@@ -2,6 +2,8 @@ import '../../ui/layouts/app';
 import '../../ui/pages/create';
 import '../../ui/pages/chat';
 
+BlazeLayout.setRoot('body');
+
 FlowRouter.route('/', {
   name: 'index',
   action () {
