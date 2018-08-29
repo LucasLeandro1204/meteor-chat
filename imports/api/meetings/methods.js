@@ -1,5 +1,4 @@
 import Meetings from './';
-import { resolve } from 'url';
 
 /**
  * Find or create meetings by slug and returns the id.

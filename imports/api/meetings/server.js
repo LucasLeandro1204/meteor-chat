@@ -1,25 +1,48 @@
 import Meetings from './';
 import { Meteor } from 'meteor/meteor';
-import { findOrCreateBySlug } from './methods';
+import {
+  // isUserAllowed,
+  findOrCreateBySlug as getMeeting
+} from './methods';
+import {
+//   deleteByConnection,
+//   findOrFailByConnection,
+  updateOrCreate as addUser
+} from '/imports/api/users/methods';
 
-/**
- * Find or create the meeting.
- * Create the user with
- */
-Meteor.publish('meeting', async (slug, username = 'Anonymous') => {
-  try {
-    const [id, user] = await Promise.all([
-      findOrCreateBySlug(slug),
-      createUser(username, this.connection.id),
-    ]);
-    const meeting = Meetings.findOne(id);
+Meteor.methods({
+  /**
+   * Find or create the meeting.
+   * User should already be "registered". If not for some reason, create it.
+   *
+   * @returns {?string}
+   */
+  async meeting (slug, username) {
+    try {
+      const id = await getMeeting(slug);
 
-    if (! meeting.allow(user)) {
-      throw new Meteor.Error('user.not.allowed', 'Usuário não ')
+      /**
+       * (Maybe) user can join another meeting having the same connection.
+       */
+      await addUser({
+        meetingId: id,
+        connectionId: this.connection.id,
+      }, {
+        username,
+      });
+
+      return id;
+    } catch (e) {
+      //
     }
-  } catch (e) {
-    //
-  }
 
-  return this.ready();
+    return null;
+  },
+});
+
+Meteor.onConnection(({ id }) => {
+  // connection.onClose(async () => {
+  //   await deleteByConnection(id);
+
+  // });
 });
