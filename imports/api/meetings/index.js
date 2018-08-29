@@ -7,7 +7,7 @@ class MeetingsCollection extends Mongo.Collection {
 
     return super.insert(doc, callback);
   }
-  
+
   update (selector, modifier) {
     const result = super.update(selector, modifier);
     incompleteCountDenormalizer.afterUpdateTodo(selector, modifier);
@@ -21,7 +21,7 @@ class MeetingsCollection extends Mongo.Collection {
   }
 };
 
-const collection = new TodosCollection('todos');
+const collection = new MeetingsCollection('meetings');
 
 collection.deny({
   insert: () => true,
@@ -39,12 +39,12 @@ collection.schema = new SimpleSchema({
     max: 100,
     optional: true,
   },
-  createdAt: {
-    type: Date,
-    denyUpdate: true,
-  },
+  // createdAt: {
+  //   type: Date,
+  //   denyUpdate: true,
+  // },
 });
 
-collection.attachSchema(collection.schema);
+// collection.attachSchema(collection.schema);
 
 export default collection;

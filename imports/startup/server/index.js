@@ -1,1 +1,1 @@
-import '/api/meetings/server';
+import '/imports/api/meetings/server';
