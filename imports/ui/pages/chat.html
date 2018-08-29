@@ -4,29 +4,44 @@
       <h2>Reunion meeting</h2>
 
       <section class="bg-white flex w-full flex-1 rounded mt-4">
-        <div class="max-w-xs py-8 px-16">
+        <div class="max-w-xs w-full py-8 px-16">
           <h3>Users</h3>
           <hr class="border-t border-grey-lighter my-4">
 
           <ul class="list-reset text-grey-darkest">
-            <li class="flex items-center mb-3">
+            <li class="flex items-center mb-4">
               {{> Avatar text="lucas" classes="mr-2"}} <p style="text-overflow: ellipsis" class="flex-1 overflow-hidden whitespace-no-wrap">Lucas Leandro Ramos da silva pererira</p>
             </li>
-            <li class="flex items-center mb-3">
-              {{> Avatar text="alberto ramos" classes="mr-2"}} <p style="text-overflow: ellipsis" class="flex-1 overflow-hidden whitespace-no-wrap">Lucas Leandro Ramos da silva pererira</p>
+            <li class="flex items-center mb-4">
+              {{> Avatar text="lucas" classes="mr-2"}} <p style="text-overflow: ellipsis" class="flex-1 overflow-hidden whitespace-no-wrap">Lucas Leandro Ramos da silva pererira</p>
             </li>
-            <li class="flex items-center mb-3">
-              {{> Avatar text="nem sempre" classes="mr-2"}} <p style="text-overflow: ellipsis" class="flex-1 overflow-hidden whitespace-no-wrap">Lucas Leandro Ramos da silva pererira</p>
+            <li class="flex items-center mb-4">
+              {{> Avatar text="lucas" classes="mr-2"}} <p style="text-overflow: ellipsis" class="flex-1 overflow-hidden whitespace-no-wrap">Lucas Leandro Ramos da silva pererira</p>
             </li>
           </ul>
         </div>
+        <div class="flex-1 flex-col flex relative">
+          <div class="pl-8 pr-16 absolute pin flex overflow-auto z-10">
+            <div class="flex-1">
+              <div class="border-l my-8 relative pl-8 max-w-md">
+                {{> Avatar text="lucas" classes="absolute -ml-12 z-30"}}
+                <h4 class="pt-2 mb-4 text-grey-dark text-sm">Lucas</h4>
+                <p class="p-4 bg-grey-lighter mb-2 inline-block leading-tight text-grey-darkest rounded">Text paokefp kefpoka epoka epoae foaep ofkapefok apeofk kefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkoakefpoka epoka epoae foaep ofkapefok apeofk</p>
+                <p class="p-4 bg-grey-lighter mb-2 inline-block leading-tight text-grey-darkest rounded">Text paokefp kefpoka epoka epoae foaep ofkapefok apeofk kefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkoakefpoka epoka epoae foaep ofkapefok apeofk</p>
+              </div>
 
-        <div class="flex-1 flex-col flex mx-16 border-l border-r">
-          <div class="flex-1">
-
+              <div class="my-8 border-r relative pr-8 max-w-md ml-auto">
+                {{> Avatar text="lucas" classes="absolute pin-r -mr-4 z-30"}}
+                <h4 class="pt-2 mb-4 text-grey-dark text-sm text-right">You</h4>
+                <p class="p-4 bg-grey-lighter mb-2 inline-block leading-tight text-grey-darkest rounded">Text paokefp kefpoka epoka epoae foaep ofkapefok apeofk kefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkoakefpoka epoka epoae foaep ofkapefok apeofk</p>
+                <p class="p-4 bg-grey-lighter mb-2 inline-block leading-tight text-grey-darkest rounded">Text paokefp kefpoka epoka epoae foaep ofkapefok apeofk kefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkkefpoka epoka epoae foaep ofkapefok apeofkoakefpoka epoka epoae foaep ofkapefok apeofk</p>
+              </div>
+            </div>
           </div>
-          <div class="justify-end">
-            Foo
+          <div class="absolute flex w-full pr-24 pl-16 pin-b pin-l z-20">
+            <div class="bg-white flex-1 flex py-8">
+              <textarea type="text" class="flex-1 outline-none h-16 resize-none" placeholder="Say something..."></textarea>
+            </div>
           </div>
         </div>
       </section>
