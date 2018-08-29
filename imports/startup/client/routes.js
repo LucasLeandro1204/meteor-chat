@@ -1,6 +1,7 @@
-import '../../ui/layouts/app';
-import '../../ui/pages/create';
 import '../../ui/pages/chat';
+import '../../ui/layouts/app';
+import '../../ui/pages/leave';
+import '../../ui/pages/create';
 
 BlazeLayout.setRoot('body');
 
@@ -18,6 +19,15 @@ FlowRouter.route('/chat', {
   action () {
     BlazeLayout.render('App', {
       main: 'Chat',
+    });
+  },
+});
+
+FlowRouter.route('/chat/leave', {
+  name: 'leave',
+  action () {
+    BlazeLayout.render('App', {
+      main: 'Leave',
     });
   },
 });
