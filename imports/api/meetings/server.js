@@ -16,7 +16,7 @@ Meteor.methods({
    *
    * @returns {?string}
    */
-  async meeting (slug, username) {
+  async meeting (slug, name) {
     try {
       const id = await getMeeting(slug);
 
@@ -27,7 +27,7 @@ Meteor.methods({
         meetingId: id,
         connectionId: this.connection.id,
       }, {
-        username: username || 'Anonymous',
+        name: name || 'Anonymous',
       });
 
       return id;

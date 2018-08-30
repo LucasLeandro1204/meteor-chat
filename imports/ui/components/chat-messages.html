@@ -7,7 +7,7 @@
       <div class="absolute pin px-8 pt-8 pb-2 overflow-auto">
         {{#each message in messages}}
           <div class="flex flex-col leading-normal mb-5">
-            <p class="font-semibold text-grey-darkest mb-1">Lucas <span class="ml-2 text-xs text-grey-dark">3:30am</span></p>
+            <p class="font-semibold text-grey-darkest mb-1">{{ message.username }} <span class="ml-2 text-xs text-grey-dark">{{ messages.created_at }}</span></p>
             <p class="text-sm">{{ message.body }}</p>
           </div>
         {{/each}}

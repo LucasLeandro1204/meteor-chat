@@ -22,9 +22,9 @@ Meteor.methods({
         connectionId: this.connection.id,
       });
 
-      await create(body, user._id, meetingId);
+      await create(body, user.name, meetingId);
     } catch (e) {
-      console.log(e);
+      //
     }
   },
 });
