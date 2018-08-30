@@ -14,7 +14,7 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/chat', {
+FlowRouter.route('/:slug', {
   name: 'chat',
   action () {
     BlazeLayout.render('App', {
@@ -23,7 +23,7 @@ FlowRouter.route('/chat', {
   },
 });
 
-FlowRouter.route('/chat/leave', {
+FlowRouter.route('/:slug/leave', {
   name: 'leave',
   action () {
     BlazeLayout.render('App', {
