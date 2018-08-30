@@ -41,5 +41,7 @@ Template.Chat.helpers({
 
   createCallback: () => value => Meteor.call('message', value, Session.get('meetingId')),
 
-  leaveCallback: () => () => FlowRouter.go('/' + FlowRouter.getParam('slug') + '/leave'),
+  leaveCallback: () => () => FlowRouter.go('leave', {
+    slug: FlowRouter.getParam('slug'),
+  }),
 });

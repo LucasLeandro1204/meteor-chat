@@ -5,6 +5,10 @@ import '../../ui/pages/create';
 
 BlazeLayout.setRoot('body');
 
+FlowRouter.triggers.enter([
+  () => Meteor.reconnect(),
+]);
+
 FlowRouter.route('/', {
   name: 'index',
   action () {

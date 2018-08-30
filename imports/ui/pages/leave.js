@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 
 Template.Leave.onCreated(function () {
   if (! Session.get('meetingId')) {
-    FlowRouter.rediret('/');
+    FlowRouter.redirect('/');
   } else {
     Meteor.disconnect();
   }
@@ -12,6 +12,7 @@ Template.Leave.onCreated(function () {
 
 Template.Leave.helpers({
   time () {
-    return Moment(Session.get()).fromNow(true);
+    console.log(Session.get('joinedAt'));
+    return Moment(Session.get('joinedAt')).fromNow(true);
   },
 });
