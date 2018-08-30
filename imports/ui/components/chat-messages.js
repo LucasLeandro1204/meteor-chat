@@ -24,6 +24,10 @@ Template.ChatMessages.helpers({
 });
 
 Template.ChatMessages.events({
+  'click .leave' (event) {
+    this.onLeave();
+  },
+
   'keydown textarea' (event) {
     if (event.key != 'Enter' || event.shiftKey) {
       return;

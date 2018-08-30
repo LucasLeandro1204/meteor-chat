@@ -13,6 +13,7 @@ Template.Chat.onCreated(function () {
         return;
       }
 
+      Session.set('joinedAt', Date.now());
       Session.set('meetingId', meetingId);
 
       Meteor.subscribe('users', meetingId);
@@ -23,16 +24,22 @@ Template.Chat.onCreated(function () {
 
 Template.Chat.helpers({
   users () {
-    return Users.find().fetch();
+    return Users.find({
+      meetingId: Session.get('meetingId'),
+    }).fetch();
   },
 
   messages () {
-    return Messages.find().fetch();
+    return Messages.find({
+      meetingId: Session.get('meetingId'),
+    }).fetch();
   },
 
   ready () {
     return this.subscriptionsReady();
   },
 
-  callback: () => value => Meteor.call('message', value, Session.get('meetingId')),
+  createCallback: () => value => Meteor.call('message', value, Session.get('meetingId')),
+
+  leaveCallback: () => () => FlowRouter.go('/' + FlowRouter.getParam('slug') + '/leave'),
 });

@@ -4,7 +4,7 @@
         <section class="bg-white flex w-full flex-1 mt-4">
           {{>ChatUsersList users=users owner=false }}
 
-          {{>ChatMessages messages=messages onMessage=callback }}
+          {{>ChatMessages messages=messages onMessage=createCallback onLeave=leaveCallback }}
         </section>
       </article>
     </main>
