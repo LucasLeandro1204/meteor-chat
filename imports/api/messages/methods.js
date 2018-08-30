@@ -7,10 +7,11 @@ import Messages from './';
  * @param {string} username
  * @param {string} meetingId
  */
-export const create = (body, username, meetingId) => new Promise((resolve, reject) => {
+export const create = (body, user, meetingId) => new Promise((resolve, reject) => {
   Messages.insert({
     body,
-    username,
+    userId: user._id,
+    username: user.name,
     meetingId,
   }, (error, fields) => error ? reject(error) : resolve(fields));
 });
