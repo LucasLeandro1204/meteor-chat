@@ -1,6 +1,4 @@
 import Users from './';
-import { resolve } from 'url';
-import { resolveSrv } from 'dns';
 
 /**
  * Update or Create user.
@@ -9,7 +7,7 @@ import { resolveSrv } from 'dns';
  * @param {object} modifier
  */
 export const updateOrCreate = (selector, modifier) => new Promise(async (resolve, reject) => {
-  const user = await Users.findOne(selector);
+  const user = Users.findOne(selector);
   const data = Object.assign({}, user, selector, modifier);
   const callback = (error, fields) => error ? reject(error) : resolve(fields);
 
@@ -25,7 +23,24 @@ export const updateOrCreate = (selector, modifier) => new Promise(async (resolve
 
 /**
  * Delete user by connection id.
+ *
+ * @param {string} connectionId
  */
 export const deleteByConnection = connectionId => Users.remove({
   connectionId,
+});
+
+/**
+ * Find or fail.
+ *
+ * @param {object} selector
+ */
+export const findOrFail = selector => new Promise((resolve, reject) => {
+  const user = Users.findOne(selector);
+
+  if (! user) {
+    reject();
+  } else {
+    resolve(user);
+  }
 });
