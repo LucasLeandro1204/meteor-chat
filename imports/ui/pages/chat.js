@@ -3,6 +3,7 @@ import '../components/chat-messages';
 import '../components/chat-users-list';
 import { Meteor } from 'meteor/meteor';
 import Users from '/imports/api/users';
+import { Session } from 'meteor/session';
 import Messages from '/imports/api/messages';
 
 Template.Chat.onCreated(function () {
@@ -12,6 +13,8 @@ Template.Chat.onCreated(function () {
         // meeting locked?
         return;
       }
+
+      Session.set('meetingId', meetingId);
 
       Meteor.subscribe('users', meetingId);
       Meteor.subscribe('messages', meetingId);
@@ -32,5 +35,5 @@ Template.Chat.helpers({
     return this.subscriptionsReady();
   },
 
-  callback: () => value => console.log(value),
+  callback: () => value => Meteor.call('message', value, Session.get('meetingid')),
 });
