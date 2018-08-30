@@ -24,7 +24,6 @@ Meteor.methods({
 
       await create(body, user, meetingId);
     } catch (e) {
-      console.log(e);
       //
     }
   },

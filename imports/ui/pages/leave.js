@@ -12,7 +12,6 @@ Template.Leave.onCreated(function () {
 
 Template.Leave.helpers({
   time () {
-    console.log(Session.get('joinedAt'));
     return Moment(Session.get('joinedAt')).fromNow(true);
   },
 });

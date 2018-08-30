@@ -4,7 +4,7 @@ Meteor + Tailwindcss
 
 <p align="center">
 
-![](static/print.jpg)
+![](static/print.png)
 
 </p>
 
@@ -29,8 +29,6 @@ $ cd chat
 ```bash
 $ meteor
 ```
-
-Now you can go to tasklist.test/ and BOOM working =)
 
 ### Testing
 
