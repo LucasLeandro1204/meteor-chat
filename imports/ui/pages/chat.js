@@ -3,7 +3,6 @@ import '../components/chat-messages';
 import '../components/chat-users-list';
 import { Meteor } from 'meteor/meteor';
 import Users from '/imports/api/users';
-import { Session } from 'meteor/session';
 import Messages from '/imports/api/messages';
 
 Template.Chat.onCreated(function () {
@@ -35,5 +34,5 @@ Template.Chat.helpers({
     return this.subscriptionsReady();
   },
 
-  callback: () => value => Meteor.call('message', value, Session.get('meetingid')),
+  callback: () => value => Meteor.call('message', value, Session.get('meetingId')),
 });
