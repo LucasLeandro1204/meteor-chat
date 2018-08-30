@@ -13,8 +13,6 @@ Template.Chat.onCreated(function () {
         return;
       }
 
-      console.log(meetingId);
-
       Meteor.subscribe('users', meetingId);
       Meteor.subscribe('messages', meetingId);
     });
@@ -33,4 +31,6 @@ Template.Chat.helpers({
   ready () {
     return this.subscriptionsReady();
   },
+
+  callback: () => value => console.log(value),
 });
