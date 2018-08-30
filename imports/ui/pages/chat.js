@@ -23,11 +23,11 @@ Template.Chat.onCreated(function () {
 
 Template.Chat.helpers({
   users () {
-    return Users.find();
+    return Users.find().fetch();
   },
 
   messages () {
-    return Messages.find();
+    return Messages.find().fetch();
   },
 
   ready () {
