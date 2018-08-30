@@ -5,9 +5,11 @@
     <ul class="list-reset font-semibold">
       {{#each user in users}}
         <li style="text-overflow: ellipsis" class="overflow-hidden whitespace-no-wrap p-2 items-center -mx-2 cursor-default rounded hover:bg-purple-light">
-          <a class="no-underline text-white mr-2 text-xs align-middle" href="#">
-            X
-          </a>
+          {{#if owner}}
+            <a class="no-underline text-white mr-2 text-xs align-middle" href="#">
+              X
+            </a>
+          {{/if}}
 
           {{ user.username }}
         </li>

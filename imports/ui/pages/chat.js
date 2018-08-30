@@ -8,7 +8,7 @@ Template.Chat.onCreated(function () {
   this.autorun(() => {
     Meteor.call('meeting', FlowRouter.getParam('slug'), FlowRouter.getQueryParam('username'), function (error, meetingId) {
       if (error || ! meetingId) {
-        // alert, retry?...
+        // meeting locked?
         return;
       }
 

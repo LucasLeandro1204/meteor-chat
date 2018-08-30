@@ -16,7 +16,7 @@ Meteor.methods({
    *
    * @returns {?string}
    */
-  async meeting (slug, username = 'Anonymous') {
+  async meeting (slug, username) {
     try {
       const id = await getMeeting(slug);
 
@@ -27,12 +27,12 @@ Meteor.methods({
         meetingId: id,
         connectionId: this.connection.id,
       }, {
-        username,
+        username: username || 'Anonymous',
       });
 
       return id;
     } catch (e) {
-      //
+      // throw error for unauthorized or locked meeting.
     }
 
     return null;
