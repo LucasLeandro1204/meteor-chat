@@ -2,37 +2,9 @@
     <main class="flex-1">
       <article class="flex flex-col h-full">
         <section class="bg-white flex w-full flex-1 mt-4">
-          <div class="w-64 p-8 bg-purple rounded-tl-lg text-white">
-            <h3 class="mb-6"># In this meeting</h3>
+          {{>ChatUsersList }}
 
-            <ul class="list-reset font-semibold">
-              <li style="text-overflow: ellipsis" class="overflow-hidden whitespace-no-wrap p-2 items-center -mx-2 cursor-default rounded hover:bg-purple-light">
-                <a class="no-underline text-white mr-2 text-xs align-middle" href="#">
-                  X
-                </a>
-
-                Lucas Leandro Ramos da silva Pererai
-              </li>
-            </ul>
-          </div>
-
-          <div class="flex-col flex w-full rounded-tr-lg">
-            <div class="flex px-8 py-3 border-b">
-              <button class="ml-auto font-bold text-grey-dark text-sm">Leave</button>
-            </div>
-            <div class="flex-1 relative">
-              <div class="absolute pin px-8 pt-8 pb-2 overflow-auto">
-                <div class="flex flex-col leading-normal mb-5">
-                  <p class="font-semibold text-grey-darkest mb-1">Lucas <span class="ml-2 text-xs text-grey-dark">3:30am</span></p>
-                  <p class="text-sm">Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet</p>
-                </div>
-              </div>
-            </div>
-            <div class="flex py-4 border-t">
-              <textarea class="resize-none w-full py-3 px-8" placeholder="Say something..." rows="1"></textarea>
-              <button class="p-3 font-semibold flex items-center justify-center rounded text-sm mx-3 text-white bg-purple">SEND</button>
-            </div>
-          </div>
+          {{>ChatMessages }}
         </section>
       </article>
     </main>
