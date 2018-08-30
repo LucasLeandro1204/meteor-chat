@@ -17,13 +17,14 @@ Meteor.methods({
    */
   async message (body, meetingId) {
     try {
-      const user = getUser({
+      const user = await getUser({
         meetingId,
         connectionId: this.connection.id,
       });
 
       await create(body, user.name, meetingId);
     } catch (e) {
+      console.log(e);
       //
     }
   },
