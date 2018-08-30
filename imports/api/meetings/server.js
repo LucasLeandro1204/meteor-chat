@@ -5,8 +5,7 @@ import {
   findOrCreateBySlug as getMeeting
 } from './methods';
 import {
-//   deleteByConnection,
-//   findOrFailByConnection,
+  deleteByConnection,
   updateOrCreate as addUser
 } from '/imports/api/users/methods';
 
@@ -17,7 +16,7 @@ Meteor.methods({
    *
    * @returns {?string}
    */
-  async meeting (slug, username) {
+  async meeting (slug, username = 'Anonymous') {
     try {
       const id = await getMeeting(slug);
 
@@ -40,9 +39,8 @@ Meteor.methods({
   },
 });
 
-Meteor.onConnection(({ id }) => {
-  // connection.onClose(async () => {
-  //   await deleteByConnection(id);
-
-  // });
+Meteor.onConnection((connection) => {
+  connection.onClose(async () => {
+    await deleteByConnection(connection.id);
+  });
 });

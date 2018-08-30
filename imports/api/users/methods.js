@@ -22,3 +22,10 @@ export const updateOrCreate = (selector, modifier) => new Promise(async (resolve
     Users.update(selector, data, callback);
   }
 });
+
+/**
+ * Delete user by connection id.
+ */
+export const deleteByConnection = connectionId => Users.remove({
+  connectionId,
+});
